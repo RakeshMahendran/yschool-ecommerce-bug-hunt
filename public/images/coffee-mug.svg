@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fef9c3"/>
+      <stop offset="1" stop-color="#fde68a"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.45" r="0.55">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.75"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#bg)"/>
+  <circle cx="200" cy="140" r="130" fill="url(#glow)"/>
+  <ellipse cx="200" cy="252" rx="120" ry="12" fill="#1b2033" opacity="0.10"/>
+
+  <path d="M176 60c-10 14 10 22 0 36M206 54c-10 14 10 22 0 36M236 60c-10 14 10 22 0 36" stroke="#a8a29e" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <path d="M268 132c34 0 40 54 0 60" fill="none" stroke="#b45309" stroke-width="16"/>
+  <rect x="132" y="108" width="140" height="138" rx="22" fill="#d97706"/>
+  <rect x="132" y="108" width="140" height="22" rx="11" fill="#b45309"/>
+  <path d="M184 176c0-12 16-12 16 0 0-12 16-12 16 0 0 14-16 22-16 22s-16-8-16-22z" fill="#fef3c7"/>
+</svg>
