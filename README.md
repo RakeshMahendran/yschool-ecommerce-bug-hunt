@@ -23,7 +23,7 @@ For the agent part of the workshop you will also need Python 3.10+; your instruc
 ## Quick start
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/RakeshMahendran/yschool-ecommerce-bug-hunt.git
 cd yschool-ecommerce-bug-hunt
 npm ci
 npm run dev
@@ -58,9 +58,13 @@ Stop the server with `Ctrl + C` in the terminal.
 
 ## Workshop challenge
 
+> You've joined a QA engineering team. Your company has given you an e-commerce application to test. Your task is to build an AI agent capable of exploring the application, validating its functionality against the requirements, and producing evidence-backed bug reports.
+
+**Ground rule: test through the browser only.** Treat the store as a black box. Don't read or search the files under `src/` to find problems. Every bug you report must be found and reproduced through the website itself.
+
 1. Get the store running locally and explore it by hand for a few minutes. Read [REQUIREMENTS.md](REQUIREMENTS.md).
 2. Build an AI testing agent with Python, Playwright and a free LLM API. Give it the ability to open pages, read what is on screen, click, type and select.
-3. Ask your agent to test one feature at a time — e.g. _"Test that search ignores letter case"_ or _"Add two different products and verify the subtotal"_.
+3. Decide for yourself what to test. Turn the requirements into test scenarios and give your agent one feature at a time.
 4. Watch the browser as the agent works. Compare what the store does with what REQUIREMENTS.md says it should do.
 5. For every defect you find, have your agent (or you) write a bug report containing:
    - **Title** — one line describing the problem
@@ -83,19 +87,6 @@ Stop the server with `Ctrl + C` in the terminal.
 - Read prices from the page as text (e.g. `₹1,999`) and convert them to numbers before comparing.
 - Keep the agent focused: one feature per run produces clearer reports.
 
-## Project structure
-
-```
-public/images/        Product illustrations (local SVGs, no internet needed)
-src/components/       Reusable UI pieces (header, product card, cart row, ...)
-src/pages/            Shop, product, cart, checkout and confirmation pages
-src/context/          Cart, toast and router state
-src/data/             Product catalogue, coupons and store settings
-src/hooks/            Small React hooks and order storage helpers
-src/utils/            Formatting, pricing, validation and storage helpers
-REQUIREMENTS.md       Expected functional behaviour (the test oracle)
-```
-
 ## Troubleshooting
 
 | Problem | Fix |
@@ -111,4 +102,4 @@ REQUIREMENTS.md       Expected functional behaviour (the test oracle)
 
 ## Disclaimer
 
-All products, prices and orders are fictional. No data leaves your machine and no payment is ever taken.
+All products, prices and orders are fictional, and no payment is ever taken. The store itself runs entirely on your machine and sends no data anywhere. **Your AI agent is different:** if it uses a cloud LLM API (for example Gemini or Groq), the page content, screenshots and test data it sends are sent to that provider. Use only the fictional demo data, and don't paste personal information or API keys into prompts.

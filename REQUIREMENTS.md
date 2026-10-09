@@ -33,17 +33,17 @@ The store sells exactly 12 products:
 ## 2. Search
 
 - **SRCH-1** The search box filters products by **product name**, matching any part of the name ("board" finds "Mechanical Keyboard").
-- **SRCH-2** Search is **case-insensitive**: "mouse", "MOUSE" and "Mouse" return the same results.
-- **SRCH-3** **Leading and trailing whitespace is ignored**: " Notebook " returns the same results as "Notebook".
+- **SRCH-2** Search is **case-insensitive**.
+- **SRCH-3** **Leading and trailing whitespace is ignored**.
 - **SRCH-4** Results update as you type. The text "Showing _X_ of 12 products" reflects the number of visible products.
 - **SRCH-5** When no product matches, a clear "No products found" message is shown with a way to reset filters.
 
 ## 3. Category filter and sorting
 
 - **FLT-1** The **Category** dropdown offers All categories, Electronics, Fashion and Home & Lifestyle.
-- **FLT-2** Choosing a category shows **only** products whose category is exactly that category (see the table above). For example, Electronics shows exactly 6 products.
+- **FLT-2** Choosing a category shows **only** products whose category is exactly that category (see the table above).
 - **FLT-3** Search and category filter can be combined.
-- **SORT-1** **Price: Low to High** orders products by **numeric** price, cheapest first (₹199 before ₹399 before ₹1,299 ...).
+- **SORT-1** **Price: Low to High** orders products by **numeric** price, cheapest first.
 - **SORT-2** **Price: High to Low** orders products by numeric price, most expensive first.
 - **SORT-3** **Name: A to Z** orders products alphabetically. **Featured** shows the default catalogue order.
 - **FLT-4** **Reset filters** clears the search text, category and sort, showing all 12 products in Featured order.
@@ -65,7 +65,7 @@ The store sells exactly 12 products:
 The order summary (cart and checkout pages) shows four amounts, in this order: **Subtotal**, **Discount**, **Shipping**, **Total**.
 
 - **PRC-1** **Subtotal** = sum over all rows of (unit price × quantity).
-- **CPN-1** The only valid coupon is **`SAVE10`** (case-insensitive, surrounding spaces ignored). It gives a **10 % discount on the subtotal**, rounded to the nearest rupee. Example: subtotal ₹2,499 → discount ₹250.
+- **CPN-1** The only valid coupon is **`SAVE10`** (case-insensitive, surrounding spaces ignored). It gives a **10 % discount on the subtotal**, rounded to the nearest rupee.
 - **CPN-2** Any other non-empty code is **rejected** with an error message. No discount is applied and the order summary does not change.
 - **CPN-3** Submitting an empty coupon field shows "Please enter a coupon code."
 - **CPN-4** An applied coupon can be removed, which sets the discount back to ₹0.
@@ -75,21 +75,11 @@ The order summary (cart and checkout pages) shows four amounts, in this order: *
   - An empty cart has no shipping charge.
 - **PRC-2** **Total** = Subtotal − Discount + Shipping.
 
-Worked examples (fresh cart):
-
-| Cart contents                  | Coupon | Subtotal | Discount | Shipping | Total  |
-| ------------------------------ | ------ | -------- | -------- | -------- | ------ |
-| 1 × Wireless Mouse             | —      | ₹899     | ₹0       | ₹99      | ₹998   |
-| 2 × Wireless Mouse             | —      | ₹1,798   | ₹0       | ₹99      | ₹1,897 |
-| 1 × Headphones                 | SAVE10 | ₹2,499   | ₹250     | ₹99      | ₹2,348 |
-| 1 × Headphones + 1 × Backpack  | —      | ₹3,998   | ₹0       | FREE     | ₹3,998 |
-| 1 × USB-C Hub + 1 × Notebook   | SAVE10 | ₹3,198   | ₹320     | ₹99      | ₹2,977 |
-
 ## 6. Checkout
 
 - **CHK-1** **Proceed to Checkout** on the cart page opens `/checkout`. With an empty cart, checkout shows the empty-cart message instead of the form.
 - **CHK-2** **Full name** is required. Whitespace-only input is treated as empty.
-- **CHK-3** **Email address** is required and must be a valid address of the form `name@domain.tld` — exactly one `@`, no spaces, and a domain containing a dot (e.g. `asha@example.com`). Inputs such as `plainaddress`, `asha@`, `asha@example` or `as ha@example.com` must be rejected.
+- **CHK-3** **Email address** is required and must be a valid address of the form `name@domain.tld` — exactly one `@`, no spaces, and a domain containing a dot. Anything else must be rejected.
 - **CHK-4** **Delivery address** is required and must contain at least 10 characters, ignoring leading and trailing spaces.
 - **CHK-5** **Phone number** is optional; if provided it must be a valid 10-digit Indian mobile number.
 - **CHK-6** **Payment method** is simulated (Cash on delivery or UPI). No real payment happens.
