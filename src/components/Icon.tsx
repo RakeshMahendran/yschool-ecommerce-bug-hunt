@@ -3,10 +3,7 @@ export type IconName =
   | 'cart'
   | 'search'
   | 'box'
-  | 'receipt'
   | 'compass'
-  | 'star'
-  | 'check'
   | 'arrow-left'
   | 'minus'
   | 'plus';
@@ -37,20 +34,12 @@ const PATHS: Record<IconName, JSX.Element> = {
       <path d="M3.5 7.5L12 12l8.5-4.5M12 12v9" />
     </>
   ),
-  receipt: (
-    <>
-      <path d="M6 3h12v18l-3-2-3 2-3-2-3 2V3z" />
-      <path d="M9 8h6M9 12h6M9 16h3" />
-    </>
-  ),
   compass: (
     <>
       <circle cx="12" cy="12" r="9" />
       <path d="M15.5 8.5l-2 5-5 2 2-5 5-2z" />
     </>
   ),
-  star: <path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.8l-5.2 2.8 1-5.8-4.3-4.1 5.9-.9L12 3.5z" />,
-  check: <path d="M5 12.5l4.5 4.5L19 7.5" />,
   'arrow-left': <path d="M19 12H5M11 6l-6 6 6 6" />,
   minus: <path d="M5 12h14" />,
   plus: <path d="M12 5v14M5 12h14" />,
@@ -59,19 +48,18 @@ const PATHS: Record<IconName, JSX.Element> = {
 interface IconProps {
   name: IconName;
   size?: number;
-  filled?: boolean;
   className?: string;
 }
 
 /** Decorative SVG icon. Hidden from assistive technology and from page text. */
-export default function Icon({ name, size = 18, filled = false, className = '' }: IconProps) {
+export default function Icon({ name, size = 18, className = '' }: IconProps) {
   return (
     <svg
       className={`icon ${className}`}
       viewBox="0 0 24 24"
       width={size}
       height={size}
-      fill={filled ? 'currentColor' : 'none'}
+      fill="none"
       stroke="currentColor"
       strokeWidth="1.9"
       strokeLinecap="round"

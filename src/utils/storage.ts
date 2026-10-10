@@ -2,7 +2,6 @@ export const STORAGE_PREFIX = 'yschool-';
 
 export const STORAGE_KEYS = {
   cart: `${STORAGE_PREFIX}cart`,
-  orders: `${STORAGE_PREFIX}orders`,
 } as const;
 
 export function readJSON<T>(key: string, fallback: T): T {

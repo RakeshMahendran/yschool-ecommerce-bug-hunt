@@ -31,44 +31,30 @@ export default function ProductDetailPage({ productId }: { productId: string }) 
 
   return (
     <main className="page container" id="main-content">
-      <nav className="breadcrumbs" aria-label="Breadcrumb">
-        <Link to="/">Shop</Link>
-        <span aria-hidden="true">/</span>
-        <Link to={`/?category=${encodeURIComponent(product.category)}`}>{product.category}</Link>
-        <span aria-hidden="true">/</span>
-        <span aria-current="page">{product.name}</span>
-      </nav>
+      <Link to="/" className="link-back">
+        <Icon name="arrow-left" size={16} /> Back to shop
+      </Link>
 
       <article className="product-detail" data-testid={`product-detail-${product.id}`}>
         <div className="product-detail-media">
           <ProductImage src={product.image} alt={product.name} />
         </div>
         <div className="product-detail-info">
-          <span className="category-pill" data-testid="product-category">
+          <span className="category" data-testid="product-category">
             {product.category}
           </span>
           <h1 data-testid="product-name">{product.name}</h1>
-          <p className="rating" aria-label={`Rated ${product.rating} out of 5 from ${product.reviewCount} reviews`}>
-            <Icon name="star" size={15} filled /> {product.rating.toFixed(1)} <span className="muted">({product.reviewCount} reviews)</span>
-          </p>
           <p className="price price-lg" data-testid="product-price">
             {formatPrice(product.price)}
           </p>
           <StockStatus product={product} />
           <p className="product-detail-desc">{product.description}</p>
-          <h2 className="features-title">Highlights</h2>
-          <ul className="features">
-            {product.features.map((feature) => (
-              <li key={feature}>{feature}</li>
-            ))}
-          </ul>
           <div className="product-detail-actions">
             <AddToCartButton product={product} size="lg" />
-            <Link to="/cart" className="btn btn-secondary btn-lg" data-testid="go-to-cart">
+            <Link to="/cart" className="btn btn-ghost btn-lg" data-testid="go-to-cart">
               Go to Cart
             </Link>
           </div>
-          <p className="muted small">Product ID: {product.id}</p>
         </div>
       </article>
     </main>

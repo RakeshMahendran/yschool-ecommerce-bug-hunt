@@ -2,7 +2,7 @@
 
 A small, realistic online shop built for the **Y-School AI Agents workshop**. You will run the store on your own laptop, build an AI browser-testing agent (Python + Playwright + an LLM), point the agent at the store and let it hunt for defects.
 
-The store sells 12 fictional products in three categories, with search, filters, a shopping cart, coupons, shipping rules and a simulated checkout. Everything runs locally: there is no backend, no login, no real payment and no network dependency once dependencies are installed.
+The store sells 12 fictional products in three categories, with search, filters, a shopping cart, coupons and shipping rules. Everything runs locally: there is no backend, no login, no real payment and no network dependency once dependencies are installed.
 
 > **Heads-up:** like a lot of real software, this store is not perfect. Finding out where it misbehaves is your job. Use [REQUIREMENTS.md](REQUIREMENTS.md) as the source of truth for how it is _supposed_ to behave.
 
@@ -48,12 +48,10 @@ Stop the server with `Ctrl + C` in the terminal.
 | Shop / catalogue     | `/`                       |
 | Product details      | `/products/<product-id>`  |
 | Cart                 | `/cart`                   |
-| Checkout             | `/checkout`               |
-| Order confirmation   | `/order/<order-id>`       |
 
 - Search, category and sort settings are reflected in the URL (for example `/?category=Fashion&sort=price-desc`), so an agent can navigate straight to a filtered view.
-- The cart and placed orders are saved in the browser's `localStorage`.
-- **Reset Demo Data** (top-right of every page) wipes the cart and order history and reloads the shop, so every test can start from the same clean state. From a script you can do the same with `localStorage.clear()` followed by a page reload.
+- The cart is saved in the browser's `localStorage`.
+- **Reset Demo Data** (top-right of every page) wipes the cart and reloads the shop, so every test can start from the same clean state. From a script you can do the same with `localStorage.clear()` followed by a page reload.
 - The coupon code advertised on the home page is `SAVE10`.
 
 ## Workshop challenge
@@ -102,4 +100,4 @@ Stop the server with `Ctrl + C` in the terminal.
 
 ## Disclaimer
 
-All products, prices and orders are fictional, and no payment is ever taken. The store itself runs entirely on your machine and sends no data anywhere. **Your AI agent is different:** if it uses a cloud LLM API (for example Gemini or Groq), the page content, screenshots and test data it sends are sent to that provider. Use only the fictional demo data, and don't paste personal information or API keys into prompts.
+All products and prices are fictional, and nothing can be purchased. The store itself runs entirely on your machine and sends no data anywhere. **Your AI agent is different:** if it uses a cloud LLM API (for example Gemini or Groq), the page content, screenshots and test data it sends are sent to that provider. Use only the fictional demo data, and don't paste personal information or API keys into prompts.

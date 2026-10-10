@@ -1,8 +1,8 @@
 import CartItemRow from '../components/CartItemRow';
 import CouponForm from '../components/CouponForm';
 import EmptyState from '../components/EmptyState';
-import Link from '../components/Link';
 import Icon from '../components/Icon';
+import Link from '../components/Link';
 import OrderSummary from '../components/OrderSummary';
 import { useCart } from '../context/CartContext';
 
@@ -43,9 +43,6 @@ export default function CartPage() {
 
           <OrderSummary totals={totals} couponCode={coupon?.code}>
             <CouponForm />
-            <Link to="/checkout" className="btn btn-primary btn-block btn-lg" data-testid="checkout-button">
-              Proceed to Checkout
-            </Link>
           </OrderSummary>
         </div>
       )}

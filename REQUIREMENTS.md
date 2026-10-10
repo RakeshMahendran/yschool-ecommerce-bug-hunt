@@ -27,7 +27,7 @@ The store sells exactly 12 products:
 
 - **CAT-1** Each product card shows the image, name, category, price, stock status and an **Add to Cart** button.
 - **CAT-2** Stock status reads "In stock", "Only _N_ left" (fewer than 10 in stock) or "Out of stock" (0 in stock).
-- **CAT-3** Clicking a product name opens its details page at `/products/<product-id>` with description, highlights, price, stock status and **Add to Cart**.
+- **CAT-3** Clicking a product name opens its details page at `/products/<product-id>` with description, price, stock status and **Add to Cart**.
 - **CAT-4** A product that is **out of stock cannot be added to the cart**. Its Add to Cart control must be disabled or otherwise prevent the action.
 
 ## 2. Search
@@ -62,7 +62,7 @@ The store sells exactly 12 products:
 
 ## 5. Pricing, coupons and shipping
 
-The order summary (cart and checkout pages) shows four amounts, in this order: **Subtotal**, **Discount**, **Shipping**, **Total**.
+The order summary on the cart page shows four amounts, in this order: **Subtotal**, **Discount**, **Shipping**, **Total**.
 
 - **PRC-1** **Subtotal** = sum over all rows of (unit price × quantity).
 - **CPN-1** The only valid coupon is **`SAVE10`** (case-insensitive, surrounding spaces ignored). It gives a **10 % discount on the subtotal**, rounded to the nearest rupee.
@@ -75,35 +75,18 @@ The order summary (cart and checkout pages) shows four amounts, in this order: *
   - An empty cart has no shipping charge.
 - **PRC-2** **Total** = Subtotal − Discount + Shipping.
 
-## 6. Checkout
+## 6. Demo data and reproducibility
 
-- **CHK-1** **Proceed to Checkout** on the cart page opens `/checkout`. With an empty cart, checkout shows the empty-cart message instead of the form.
-- **CHK-2** **Full name** is required. Whitespace-only input is treated as empty.
-- **CHK-3** **Email address** is required and must be a valid address of the form `name@domain.tld` — exactly one `@`, no spaces, and a domain containing a dot. Anything else must be rejected.
-- **CHK-4** **Delivery address** is required and must contain at least 10 characters, ignoring leading and trailing spaces.
-- **CHK-5** **Phone number** is optional; if provided it must be a valid 10-digit Indian mobile number.
-- **CHK-6** **Payment method** is simulated (Cash on delivery or UPI). No real payment happens.
-- **CHK-7** Clicking **Place Order** with any invalid field shows an error next to each invalid field and a summary message, and **no order is placed**.
-- **CHK-8** Clicking **Place Order** with valid details places a simulated order, empties the cart and opens the **Order Confirmed** page.
-
-## 7. Order confirmation
-
-- **ORD-1** The confirmation page shows the heading "Order Confirmed", an **order ID** in the format `YS-<number>`, the purchased items, delivery details and the payment summary.
-- **ORD-2** Order IDs are sequential starting from `YS-1001` after a reset.
-- **ORD-3** Orders are saved in `localStorage` and the confirmation URL keeps working after a reload.
-
-## 8. Demo data and reproducibility
-
-- **DEMO-1** **Reset Demo Data** (header) removes the saved cart and orders and reloads the shop with all filters cleared.
-- **DEMO-2** Product data, prices, coupon rules and order numbering are deterministic; nothing is random.
+- **DEMO-1** **Reset Demo Data** (header) removes the saved cart and reloads the shop with all filters cleared.
+- **DEMO-2** Product data, prices and coupon rules are deterministic; nothing is random.
 
 ---
 
 ## Appendix A — Automation contract
 
-Every page has a single `<h1>`: "Shop all products", product name, "Your Cart", "Checkout", "Order Confirmed".
+Every page has a single `<h1>`: "Shop all products", the product name, or "Your Cart".
 
-Form fields have visible labels, so `get_by_label("Search products")`, `get_by_label("Category")`, `get_by_label("Sort by")`, `get_by_label("Coupon code")`, `get_by_label("Full name")`, `get_by_label("Email address")`, `get_by_label("Phone number")` and `get_by_label("Delivery address")` all work. Buttons have accessible names such as "Add Wireless Mouse to cart", "Increase quantity of Notebook", "Remove Notebook from cart", "Apply", "Place Order".
+Form fields have visible labels, so `get_by_label("Search products")`, `get_by_label("Category")`, `get_by_label("Sort by")` and `get_by_label("Coupon code")` all work. Buttons have accessible names such as "Add Wireless Mouse to cart", "Increase quantity of Notebook", "Remove Notebook from cart", "Apply".
 
 Stable `data-testid` values:
 
@@ -115,10 +98,8 @@ Stable `data-testid` values:
 | Product card | `product-card-<id>`, `add-to-cart-<id>`; inside a card: `product-name`, `product-category`, `product-price`, `stock-status` |
 | Product page | `product-detail-<id>`, `product-name`, `product-price`, `stock-status`, `add-to-cart-<id>`, `go-to-cart` |
 | Cart rows | `cart-items`, `cart-item-<product-id>` (one per row); inside a row: `cart-item-name`, `cart-item-price`, `quantity-<product-id>`, `increase-quantity-<product-id>`, `decrease-quantity-<product-id>`, `remove-item-<product-id>`, `cart-item-total` |
-| Cart page | `empty-cart`, `continue-shopping`, `checkout-button` |
+| Cart page | `empty-cart`, `continue-shopping` |
 | Coupon | `coupon-input`, `apply-coupon-button`, `coupon-message`, `applied-coupon`, `applied-coupon-code`, `remove-coupon-button` |
 | Order summary | `order-summary`, `cart-subtotal`, `discount-amount`, `shipping-amount`, `order-total` |
-| Checkout | `checkout-form`, `name-input`, `email-input`, `phone-input`, `address-input`, `name-error`, `email-error`, `phone-error`, `address-error`, `form-error-summary`, `payment-cod`, `payment-upi`, `place-order-button`, `checkout-items` |
-| Confirmation | `order-confirmation`, `order-id`, `confirmation-name`, `confirmation-email`, `confirmation-address`, `confirmation-items` |
 
-`localStorage` keys: `yschool-cart`, `yschool-orders`.
+`localStorage` key: `yschool-cart`.

@@ -9,13 +9,9 @@ export const PRODUCTS: Product[] = [
     category: 'Electronics',
     price: 899,
     stock: 25,
-    rating: 4.4,
-    reviewCount: 312,
     image: '/images/wireless-mouse.svg',
-    shortDescription: 'Silent-click ergonomic mouse with 2.4 GHz receiver.',
     description:
       'A lightweight ergonomic mouse with silent switches, an adjustable 800–1600 DPI sensor and up to 12 months of battery life on a single AA cell.',
-    features: ['2.4 GHz nano receiver', 'Silent click switches', 'Adjustable DPI', '12-month battery life'],
     tags: ['computer', 'accessories', 'wireless'],
   },
   {
@@ -24,13 +20,9 @@ export const PRODUCTS: Product[] = [
     category: 'Electronics',
     price: 1999,
     stock: 12,
-    rating: 4.6,
-    reviewCount: 189,
     image: '/images/mechanical-keyboard.svg',
-    shortDescription: 'Compact 87-key keyboard with tactile switches.',
     description:
       'A tenkeyless mechanical keyboard with tactile brown switches, white backlighting and a detachable USB-C cable, built for long coding sessions.',
-    features: ['Tactile brown switches', 'Tenkeyless 87-key layout', 'White LED backlight', 'Detachable USB-C cable'],
     tags: ['computer', 'accessories', 'typing'],
   },
   {
@@ -39,13 +31,9 @@ export const PRODUCTS: Product[] = [
     category: 'Electronics',
     price: 1299,
     stock: 18,
-    rating: 4.3,
-    reviewCount: 97,
     image: '/images/laptop-stand.svg',
-    shortDescription: 'Foldable aluminium stand with six height settings.',
     description:
       'Raise your screen to eye level with this foldable aluminium stand. Six height settings, anti-slip pads and support for laptops up to 17 inches.',
-    features: ['Aluminium alloy body', '6 height settings', 'Fits 10–17 inch laptops', 'Folds flat for travel'],
     tags: ['computer', 'accessories', 'ergonomic'],
   },
   {
@@ -54,13 +42,9 @@ export const PRODUCTS: Product[] = [
     category: 'Electronics',
     price: 2499,
     stock: 9,
-    rating: 4.5,
-    reviewCount: 421,
     image: '/images/headphones.svg',
-    shortDescription: 'Over-ear Bluetooth headphones with 30-hour battery.',
     description:
       'Comfortable over-ear Bluetooth headphones with deep bass, a built-in microphone and up to 30 hours of playback per charge.',
-    features: ['Bluetooth 5.3', '30-hour battery life', 'Built-in microphone', 'Foldable design'],
     tags: ['audio', 'wireless', 'music'],
   },
   {
@@ -69,13 +53,9 @@ export const PRODUCTS: Product[] = [
     category: 'Electronics',
     price: 2999,
     stock: 14,
-    rating: 4.2,
-    reviewCount: 76,
     image: '/images/usb-c-hub.svg',
-    shortDescription: '7-in-1 hub with HDMI, SD card reader and 100 W PD.',
     description:
       'Expand a single USB-C port into HDMI 4K output, three USB-A ports, SD and microSD card readers and 100 W pass-through charging.',
-    features: ['4K HDMI output', '3 × USB-A 3.0', 'SD + microSD readers', '100 W power delivery'],
     tags: ['computer', 'accessories', 'adapter'],
   },
   {
@@ -84,13 +64,9 @@ export const PRODUCTS: Product[] = [
     category: 'Electronics',
     price: 4999,
     stock: 0,
-    rating: 4.1,
-    reviewCount: 254,
     image: '/images/smartwatch.svg',
-    shortDescription: 'AMOLED fitness watch with heart-rate and SpO2 tracking.',
     description:
       'Track workouts, sleep, heart rate and SpO2 on a bright 1.4-inch AMOLED display. Water resistant to 5 ATM with up to 10 days of battery.',
-    features: ['1.4 inch AMOLED display', 'Heart-rate and SpO2 sensors', '5 ATM water resistance', '10-day battery'],
     tags: ['wearable', 'fitness', 'wireless'],
   },
   {
@@ -99,13 +75,9 @@ export const PRODUCTS: Product[] = [
     category: 'Fashion',
     price: 1499,
     stock: 20,
-    rating: 4.5,
-    reviewCount: 143,
     image: '/images/backpack.svg',
-    shortDescription: 'Water-resistant 25 L backpack with laptop sleeve.',
     description:
       'A 25-litre everyday backpack in water-resistant fabric with a padded 15.6-inch laptop sleeve, bottle pockets and a hidden back pocket.',
-    features: ['25 L capacity', 'Padded laptop sleeve', 'Water-resistant fabric', 'Hidden back pocket'],
     tags: ['bags', 'travel', 'college'],
   },
   {
@@ -114,13 +86,9 @@ export const PRODUCTS: Product[] = [
     category: 'Fashion',
     price: 599,
     stock: 40,
-    rating: 4.0,
-    reviewCount: 88,
     image: '/images/t-shirt.svg',
-    shortDescription: 'Organic cotton crew-neck tee in a relaxed fit.',
     description:
       'A soft, breathable crew-neck T-shirt made from 100% organic cotton. Pre-shrunk, relaxed fit and printed with the Y-School logo.',
-    features: ['100% organic cotton', 'Relaxed fit', 'Pre-shrunk fabric', 'Machine washable'],
     tags: ['clothing', 'cotton', 'casual'],
   },
   {
@@ -129,13 +97,9 @@ export const PRODUCTS: Product[] = [
     category: 'Home & Lifestyle',
     price: 399,
     stock: 35,
-    rating: 4.7,
-    reviewCount: 205,
     image: '/images/coffee-mug.svg',
-    shortDescription: '350 ml ceramic mug, microwave and dishwasher safe.',
     description:
       'A sturdy 350 ml ceramic mug with a matte glaze and a comfortable handle. Microwave and dishwasher safe.',
-    features: ['350 ml capacity', 'Ceramic with matte glaze', 'Microwave safe', 'Dishwasher safe'],
     tags: ['kitchen', 'drinkware', 'gift'],
   },
   {
@@ -144,13 +108,9 @@ export const PRODUCTS: Product[] = [
     category: 'Home & Lifestyle',
     price: 199,
     stock: 60,
-    rating: 4.3,
-    reviewCount: 64,
     image: '/images/notebook.svg',
-    shortDescription: 'A5 dotted notebook with 160 pages of 80 gsm paper.',
     description:
       'An A5 hardcover notebook with 160 dotted pages of smooth 80 gsm paper, a ribbon bookmark and an elastic closure.',
-    features: ['A5 hardcover', '160 dotted pages', '80 gsm paper', 'Ribbon bookmark'],
     tags: ['stationery', 'paper', 'college'],
   },
   {
@@ -159,13 +119,9 @@ export const PRODUCTS: Product[] = [
     category: 'Home & Lifestyle',
     price: 699,
     stock: 30,
-    rating: 4.6,
-    reviewCount: 167,
     image: '/images/water-bottle.svg',
-    shortDescription: 'Insulated 750 ml steel bottle, cold for 24 hours.',
     description:
       'A double-wall vacuum insulated stainless steel bottle that keeps drinks cold for 24 hours or hot for 12. Leak-proof lid included.',
-    features: ['750 ml capacity', 'Double-wall insulation', 'Leak-proof lid', 'BPA free'],
     tags: ['drinkware', 'travel', 'fitness'],
   },
   {
@@ -174,13 +130,9 @@ export const PRODUCTS: Product[] = [
     category: 'Home & Lifestyle',
     price: 1799,
     stock: 7,
-    rating: 4.4,
-    reviewCount: 58,
     image: '/images/desk-lamp.svg',
-    shortDescription: 'Adjustable LED lamp with three colour temperatures.',
     description:
       'A flexible-arm LED desk lamp with three colour temperatures, five brightness levels and a USB charging port in the base.',
-    features: ['3 colour temperatures', '5 brightness levels', 'Flexible arm', 'USB charging port'],
     tags: ['lighting', 'electronics', 'study'],
   },
 ];
