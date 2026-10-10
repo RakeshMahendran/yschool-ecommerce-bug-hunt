@@ -24,7 +24,7 @@ export default function OrderSummary({ totals, couponCode, title = 'Order Summar
         <div className="summary-row">
           <dt>Discount{couponCode ? ` (${couponCode})` : ''}</dt>
           <dd data-testid="discount-amount" className={totals.discount > 0 ? 'text-success' : ''}>
-            {totals.discount > 0 ? `−${formatPrice(totals.discount)}` : formatPrice(0)}
+            {totals.discount > 0 ? `-${formatPrice(totals.discount)}` : formatPrice(0)}
           </dd>
         </div>
         <div className="summary-row">

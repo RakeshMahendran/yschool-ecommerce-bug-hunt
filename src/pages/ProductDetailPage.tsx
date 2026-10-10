@@ -1,5 +1,6 @@
 import AddToCartButton from '../components/AddToCartButton';
 import EmptyState from '../components/EmptyState';
+import Icon from '../components/Icon';
 import Link from '../components/Link';
 import ProductImage from '../components/ProductImage';
 import StockStatus from '../components/StockStatus';
@@ -15,7 +16,7 @@ export default function ProductDetailPage({ productId }: { productId: string }) 
         <h1 className="sr-only">Product not found</h1>
         <EmptyState
           testId="product-not-found"
-          icon="📦"
+          icon="box"
           title="Product not found"
           message="We couldn't find the product you were looking for."
           action={
@@ -48,7 +49,7 @@ export default function ProductDetailPage({ productId }: { productId: string }) 
           </span>
           <h1 data-testid="product-name">{product.name}</h1>
           <p className="rating" aria-label={`Rated ${product.rating} out of 5 from ${product.reviewCount} reviews`}>
-            ★ {product.rating.toFixed(1)} <span className="muted">({product.reviewCount} reviews)</span>
+            <Icon name="star" size={15} filled /> {product.rating.toFixed(1)} <span className="muted">({product.reviewCount} reviews)</span>
           </p>
           <p className="price price-lg" data-testid="product-price">
             {formatPrice(product.price)}

@@ -2,6 +2,7 @@ import CartItemRow from '../components/CartItemRow';
 import CouponForm from '../components/CouponForm';
 import EmptyState from '../components/EmptyState';
 import Link from '../components/Link';
+import Icon from '../components/Icon';
 import OrderSummary from '../components/OrderSummary';
 import { useCart } from '../context/CartContext';
 
@@ -15,7 +16,7 @@ export default function CartPage() {
       {items.length === 0 ? (
         <EmptyState
           testId="empty-cart"
-          icon="🛒"
+          icon="cart"
           title="Your cart is empty"
           message="Browse the catalogue and add something you like."
           action={
@@ -36,7 +37,7 @@ export default function CartPage() {
               ))}
             </ul>
             <Link to="/" className="link-back" data-testid="continue-shopping">
-              ← Continue shopping
+              <Icon name="arrow-left" size={16} /> Continue shopping
             </Link>
           </section>
 

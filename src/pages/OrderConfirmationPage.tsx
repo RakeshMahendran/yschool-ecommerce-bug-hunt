@@ -1,5 +1,6 @@
 import { useMemo } from 'react';
 import EmptyState from '../components/EmptyState';
+import Icon from '../components/Icon';
 import Link from '../components/Link';
 import OrderSummary from '../components/OrderSummary';
 import { findOrder } from '../hooks/useOrders';
@@ -17,7 +18,7 @@ export default function OrderConfirmationPage({ orderId }: { orderId: string }) 
         <h1 className="page-title">Order not found</h1>
         <EmptyState
           testId="order-not-found"
-          icon="🧾"
+          icon="receipt"
           title="We couldn't find that order"
           message="The order may have been cleared when the demo data was reset."
           action={
@@ -34,7 +35,7 @@ export default function OrderConfirmationPage({ orderId }: { orderId: string }) 
     <main className="page container" id="main-content">
       <section className="confirmation-hero" data-testid="order-confirmation" aria-labelledby="confirmation-heading">
         <div className="confirmation-check" aria-hidden="true">
-          ✓
+          <Icon name="check" size={32} />
         </div>
         <h1 id="confirmation-heading">Order Confirmed</h1>
         <p>

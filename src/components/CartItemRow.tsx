@@ -3,6 +3,7 @@ import { findProduct } from '../data/products';
 import type { CartLine } from '../types';
 import { formatPrice } from '../utils/format';
 import { lineTotal } from '../utils/pricing';
+import Icon from './Icon';
 import Link from './Link';
 import ProductImage from './ProductImage';
 
@@ -49,7 +50,7 @@ export default function CartItemRow({ line }: { line: CartLine }) {
           aria-label={`Decrease quantity of ${line.name}`}
           data-testid={`decrease-quantity-${line.productId}`}
         >
-          −
+          <Icon name="minus" size={16} />
         </button>
         <output className="qty-value" aria-live="polite" data-testid={`quantity-${line.productId}`}>
           {line.quantity}
@@ -62,7 +63,7 @@ export default function CartItemRow({ line }: { line: CartLine }) {
           aria-label={`Increase quantity of ${line.name}`}
           data-testid={`increase-quantity-${line.productId}`}
         >
-          +
+          <Icon name="plus" size={16} />
         </button>
       </div>
       <p className="cart-row-total" data-testid="cart-item-total">

@@ -117,7 +117,7 @@ export default function ShopPage() {
         {products.length === 0 ? (
           <EmptyState
             testId="empty-results"
-            icon="🔍"
+            icon="search"
             title="No products found"
             message="No products match your search or filters. Try a different search term or reset the filters."
             action={

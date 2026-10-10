@@ -1110,3 +1110,26 @@ textarea.input {
     padding: 18px;
   }
 }
+
+/* ---------- Icons ---------- */
+.icon {
+  flex-shrink: 0;
+  vertical-align: -0.15em;
+}
+
+.rating,
+.link-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.qty-btn {
+  display: inline-grid;
+  place-items: center;
+}
+
+.empty-icon {
+  color: var(--color-primary);
+  line-height: 0;
+}

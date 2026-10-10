@@ -7,7 +7,7 @@ export default function NotFoundPage() {
       <h1 className="page-title">Page not found</h1>
       <EmptyState
         testId="not-found"
-        icon="🧭"
+        icon="compass"
         title="This page doesn't exist"
         message="The link may be broken or the page may have moved."
         action={

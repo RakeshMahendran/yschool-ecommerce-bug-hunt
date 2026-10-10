@@ -1,5 +1,6 @@
 import { useRef, useState, type ChangeEvent, type FormEvent } from 'react';
 import EmptyState from '../components/EmptyState';
+import Icon from '../components/Icon';
 import Link from '../components/Link';
 import OrderSummary from '../components/OrderSummary';
 import { useCart } from '../context/CartContext';
@@ -67,7 +68,7 @@ export default function CheckoutPage() {
         <h1 className="page-title">Checkout</h1>
         <EmptyState
           testId="empty-cart"
-          icon="🛒"
+          icon="cart"
           title="Your cart is empty"
           message="Add products to your cart before checking out."
           action={
@@ -253,7 +254,7 @@ export default function CheckoutPage() {
             ))}
           </ul>
           <Link to="/cart" className="link-back" data-testid="back-to-cart">
-            ← Back to cart
+            <Icon name="arrow-left" size={16} /> Back to cart
           </Link>
         </OrderSummary>
       </div>

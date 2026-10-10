@@ -1,6 +1,7 @@
 import type { Product } from '../types';
 import { formatPrice } from '../utils/format';
 import AddToCartButton from './AddToCartButton';
+import Icon from './Icon';
 import Link from './Link';
 import ProductImage from './ProductImage';
 import StockStatus from './StockStatus';
@@ -24,7 +25,7 @@ export default function ProductCard({ product }: { product: Product }) {
             {product.category}
           </span>
           <span className="rating" aria-label={`Rated ${product.rating} out of 5`}>
-            ★ {product.rating.toFixed(1)}
+            <Icon name="star" size={14} filled /> {product.rating.toFixed(1)}
           </span>
         </div>
         <h3 className="product-card-title" id={`product-title-${product.id}`}>
